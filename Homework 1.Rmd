@@ -1,0 +1,94 @@
+---
+title: "Homework 1"
+author: "Mari Sanders"
+date: "2024-09-13"
+output: pdf_document
+---
+
+# Problem 1 
+
+a) Qualitative, ordinal 
+b) Qualitative, binary
+c) Qualitative, nominal
+d) Quantitative, continuous
+e) Quantitative, discrete
+
+# Problem 2 
+
+```{r}
+depression_score <- c(45,39,25,47,49,5,70,99,74,37,99,35,8,59)
+```
+Mean: \(\frac{45 +39+25+47+49,5+70+99+74+37+99+35+8+59}{14}\) = `r mean(depression_score)`
+
+Median: 
+5, 8, 25, 35, 37, 39, 45, 47, 49, 59, 70, 74, 99, 99
+
+The middle number is `r median(depression_score)`
+
+Variance: \(\frac{1}{14 -1} \sum^{12}_{i=1} (x_i - 49.35\)^2\) = `r var(depression_score)`
+
+Standard Deviation: \(\sqrt{(832.0934)} = \) `r sd(depression_score)`
+
+Range: The numbers range from 5 to 99 
+
+b) 
+
+```{r}
+boxplot(depression_score)$stats
+```
+This box plot is right skewed, with a median of 46, a minimum of 5, an 
+IQR = \(70-35 = 35\) and a max of 99. 
+
+
+a) 
+```{r}
+depression_score_car <- c(67, 50, 85, 43, 64, 35, 47, 97, 58, 58, 10, 56, 50)
+
+boxplot(depression_score, depression_score_car)$stats
+```
+b) The first boxplot is right skewed, with a median of 46, a minimum of 5, an 
+IQR = \(70-35 = 35\) and a max of 99. The second boxplot is fairly symmetric, 
+with a minimum of 35, and IQR = \(64-47 = 17\), a median of 56, and a max of 85. 
+There also seem to be some outliers in this second boxplot.
+
+c) The first group, the individuals from a bike crash seem to have lower depression
+score than the second group, the individuals from car crashes. This is because 
+the median is lower in the first than the second. 
+
+# Problem 3
+
+a) P(even number) = \(\frac{6}{12} = \frac{1}{2}\)
+
+b) P(number 10 appears) = \(\frac{1}{12}\)
+
+c) \(P( A \cup B) = P(A) + P(B) - P(A \cap B)\)
+\(P(A \cap B) = \frac{1}{12} \) because when there is 1 chance where an even
+number appears and a 10 appears. 
+
+\[P(A \cup B) = \frac{1}{2} + \frac{1}{12} - \frac{1}{12} = \frac{1}{2}\]
+
+d) No the events are not independent. If they were, \(P(A \cap B) = 0\), but we 
+found that it in fact equals to \(\frac{1}{12}\). Since \(P(A \cap B) \neq 0\), 
+events A and B are not independent.
+
+# Problem 4 
+
+Want to find the probability that the woman has dementia given that she has a 
+positive test. 
+Given \(P(P|D)\) = 0.80 and \(P(P|D^c) = 0.10\), and P(D) = 0.05, 
+
+\(P(P) = P(P|D) \cdot P(D) + P(P|D^c) \cdot P(D^c)\)
+
+\(P(P) = (0.80)(0.05) + (0.1)(1-0.05) = 0.135\)
+
+Now we want to find the P(D|P),
+
+P(D|P) = \(\frac{P(D \cap P) \cdot P(D)}{P(P)} = \frac{0.80 \cdot 0.05}{0.135}\)
+
+\[P(D|P) = 0.296\]
+
+
+
+
+
+
